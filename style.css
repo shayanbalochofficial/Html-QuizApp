@@ -70,8 +70,46 @@ body {
   margin-bottom: 25px;
 }
 
-.answer-btn{
-  background-color: #f8f0e5;
+.answer-btn {
+  background-color: #87ecf0;
   color: #333;
-  border: 2px solid #eadbc8;
+  border: 2px solid #bad1f0;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #bad1f0;
+  border-color: #4bbcd3;
+}
+
+.answer-btn.correct {
+  background-color: #4bbcd3;
+  border-color: #a3f0c4;
+  color: #28a745;
+}
+
+.answer-btn.incorrect {
+  background-color: #fff0f0;
+  border-color: #ffbdbd;
+  color: #dc3545;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #f8f0e5;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress {
+  height: 100%;
 }
