@@ -61,3 +61,20 @@ const quizQuestions = [
     ],
   },
 ];
+
+let currentQuestionIndex = 0;
+let score = 0;
+let answersDisabled = false;
+
+totalQuestionsSpan.textContent = quizQuestions.length;
+maxScoreSpan.textContent = quizQuestions.length;
+
+startButton.addEventListener("click", startQuiz);
+restartButton.addEventListener("click", restartQuiz);
+
+function startQuiz() {
+  console.log("Quiz started");
+}
+function restartQuiz() {
+  console.log("Quiz restarted");
+}
