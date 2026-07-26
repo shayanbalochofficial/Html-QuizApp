@@ -73,8 +73,52 @@ startButton.addEventListener("click", startQuiz);
 restartButton.addEventListener("click", restartQuiz);
 
 function startQuiz() {
-  console.log("Quiz started");
+  currentQuestionIndex = 0;
+  score = 0;
+  scoreSpan.textContent = 0;
+
+  startScreen.classList.remove("active");
+  quizScreen.classList.add("active");
+
+  showQuestion();
 }
+
+function showQuestion() {
+  answersDisabled = false;
+
+  const currentQuestion = quizQuestions[currentQuestionIndex];
+
+  currentQuestionSpan.textContent = currentQuestionIndex + 1;
+
+  const progressPercent = (currentQuestionIndex / quizQuestions.length) * 100;
+  progressBar.style.width = progressPercent + "%";
+
+  questionText.textContent = currentQuestion.question;
+
+  answersContainer.innerHTML = "";
+
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.textContent = answer.text;
+    button.classList.add("answer-btn");
+
+
+    button.dataset.correct = answer.correct;
+
+    button.addEventListener("click", selectAnswer);
+
+    answersContainer.appendChild(button);
+  })
+}
+
+function selectAnswer(event) { 
+  if (answersDisabled) return 
+
+  answersDisabled = true;
+
+  const selectedButton = event.target;
+}
+
 function restartQuiz() {
   console.log("Quiz restarted");
 }
